@@ -8,7 +8,10 @@ const Home = () => {
     <div>
       {/* Navbar */}
       <nav>
+        <div>
+        <img src="../public/NETONCARE.png" alt="logo"></img>
         <h1>NetonCare</h1>
+        </div>        
         <div>
           <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
@@ -50,7 +53,7 @@ const Home = () => {
 
       {/* How It Works Section */}
       <section className="timeline">
-        {["Sign Up", "Select Service", "Get Care Instantly"].map((step, index) => (
+        {["Sign Up", "→","Select Service", "→","Get Care Instantly"].map((step, index) => (
           <motion.div 
             key={index} 
             className="timeline-step"
@@ -63,22 +66,31 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <section className="testimonials">
-        <h2>What Our Users Say</h2>
-        {["John Doe", "Jane Smith", "Michael Brown"].map((user, index) => (
-          <motion.div 
-            key={index} 
-            className="testimonial-card"
-            whileHover={{ scale: 1.05 }}
-          >
-            <p>"Amazing service! Helped me get medical help instantly."</p>
-            <h4>- {user}</h4>
-          </motion.div>
-        ))}
-      </section>
+  <h2>What Our Users Say</h2>
+  {[
+    { name: "Dorcas J", feedback: "Amazing service! Helped me get medical help instantly." },
+    { name: "Anne Njenga", feedback: "A lifesaver! Quick and reliable healthcare assistance." },
+    { name: "Peter Yegon", feedback: "Highly recommended! Professional and efficient service." }
+  ].map((user, index) => (
+    <motion.div 
+      key={index} 
+      className="testimonial-card"
+      whileHover={{ scale: 1.05 }}
+    >
+      <p>"{user.feedback}"</p>
+      <h4>- {user.name}</h4>
+    </motion.div>
+  ))}
+</section>
+
+
+
 
       {/* Sticky CTA Button */}
-      <button className="sticky-cta">Join Now</button>
-
+      <Link to="/register" className="sticky-cta">
+      Join Now
+    </Link>
+      
       {/* Footer */}
       <footer>
         <p>© 2025 NetonCare. All rights reserved.</p>

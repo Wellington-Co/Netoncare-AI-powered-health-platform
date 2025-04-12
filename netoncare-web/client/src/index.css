@@ -109,10 +109,13 @@ nav a:hover {
 /* How It Works */
 .timeline {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-items: center;
   padding: 50px;
   background: #f1f1f1;
+  justify-content: center;
+  gap: 10px;
 }
 .timeline-step {
   background: white;
@@ -145,6 +148,7 @@ nav a:hover {
 /* Sticky CTA Button */
 .sticky-cta {
   position: fixed;
+  text-decoration: none;
   bottom: 20px;
   right: 20px;
   background: #007bff;
