@@ -1,0 +1,4 @@
+[build]
+  base = "netoncare-web/client"
+  publish = "build"  # or "dist" if Vite
+  command = "npm run build"
